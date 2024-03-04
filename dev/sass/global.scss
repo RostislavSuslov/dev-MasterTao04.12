@@ -5,6 +5,7 @@
 
 
 body {
+    font-size: 16px;
     background-color: $bg-primary;
     color: $text-color;
     font-family: $font-primary;
@@ -104,7 +105,7 @@ ul {
 }
 
 .container-xxl {
-    max-width: 1850px; /*or 1820px???? =)*/
+    max-width: 1840px; /*or 1820px???? =)*/
 }
 
 .wf-300 {
@@ -522,7 +523,6 @@ ul.slick-dots {
 
  
 .advantages,
-.services,
-.test  {
+.services {
     @include default-bg;
 }

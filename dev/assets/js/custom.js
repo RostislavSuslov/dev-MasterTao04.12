@@ -1,40 +1,42 @@
 const hamburger = document.querySelector('.hamburger')
 const headerNav = document.querySelector('.header-nav')
 
-hamburger.addEventListener('click', function(){
+hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('is-active')
     headerNav.classList.toggle('show')
 })
 
 
-$('#first-screen-slider').slick({ 
-   dots: true,
-   appendArrows: $('.first-screen-arrows'),
-   responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        arrows: false,
-      }
-    },
-  ]
+$('#first-screen-slider').slick({
+    dots: true,
+    appendArrows: $('.first-screen-arrows'),
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+            arrows: false,
+        }
+    }, ]
 });
 
 
-//Function Declaration
+$('select').niceSelect();
+
 const fileInput = document.querySelector('#calculation-file');
 const fileName = document.querySelector('#file-name')
 
-fileInput.addEventListener('change', function() {
-  fileName.innerHTML = this.files[0].name
+fileInput.addEventListener('change', () => {
+    fileName.innerHTML = fileInput.files[0].name;
+});
+
+
+const controledField = document.querySelectorAll('[type="checkbox"]')
+const fileField = document.querySelectorAll('[type="file"]')
+
+controledField.forEach(input => {
+    input.closest('.input-wrapper').classList.add('controled-wrapper')
+    input.closest('.col').classList.add('controled-col')
 })
 
-//Function Expression
-// const fileInput = document.querySelector('#calculation-file');
-// const fileName = document.querySelector('#file-name')
-
-// fileInput.addEventListener('change', () => {
-//   fileName.innerHTML = fileInput.files[0].name;
-// });
-
-//https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions
+fileField.forEach(input => {
+  input.closest('.input-wrapper').classList.add('file-wrapper')
+})

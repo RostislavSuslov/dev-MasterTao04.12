@@ -68,12 +68,14 @@ h6,
 
 ol {
     counter-reset: li;
+
     li {
         list-style: none;
-        &:not([class]):before{
+
+        &:not([class]):before {
             content: counter(li, decimal) ".";
             counter-increment: li;
-            color: $color-secondary;   
+            color: $color-secondary;
             margin-right: 12px;
             font-weight: 600;
             font-size: 18px;
@@ -82,11 +84,12 @@ ol {
 }
 
 ul {
-    li{
+    li {
         list-style: none;
-        &:not([class]):before{
+
+        &:not([class]):before {
             content: "";
-            background-color: $color-secondary;   
+            background-color: $color-secondary;
             margin-right: 12px;
             width: 8px;
             height: 8px;
@@ -105,7 +108,8 @@ ul {
 }
 
 .container-xxl {
-    max-width: 1840px; /*or 1820px???? =)*/
+    max-width: 1840px;
+    /*or 1820px???? =)*/
 }
 
 .wf-300 {
@@ -156,7 +160,7 @@ ul {
             border-radius: 4px;
             width: 24px;
             height: 24px;
-            margin-right: 10px;
+            margin-right: 9px;
 
         }
 
@@ -190,6 +194,50 @@ ul {
     }
 }
 
+.nice-select {
+    color: $bg-primary;
+    height: 56px;
+    border-radius: 10px;
+    padding: 7px 20px;
+    @include fieldState;
+  
+    .list {
+        width: 100%;
+    }
+
+    &:after {
+        background: url(assets/img/icon-up-arrow.svg) center / contain no-repeat;
+        width: 10px;
+        height: 10px;
+        border: none;
+        transform: rotate(-180deg);
+        margin-top: -7px;
+        right: 24px;
+    }
+
+    &.open {
+        &::after {
+            transform: rotate(0deg);
+            margin-top: -4px;
+            right: 20px;
+        }
+    }
+
+    .option:hover {
+        color: #fff;
+        background-color: $color-secondary;
+    }
+
+    .option.focus,
+    .option.selected.focus {
+        background-color: $color-secondary;
+    }
+
+}
+
+
+
+
 
 
 .btn {
@@ -211,6 +259,7 @@ ul {
     &:focus-visible {
         box-shadow: none;
     }
+
     &:focus {
         box-shadow: none;
     }
@@ -226,7 +275,7 @@ ul {
         background-color: $color-secondary;
         border-color: $color-secondary;
     }
-    
+
 }
 
 .btn-secondary {
@@ -329,8 +378,8 @@ ul {
     width: 0px;
 }
 
- 
- 
+
+
 
 
 
@@ -346,7 +395,8 @@ ul {
     border: none;
     background: center no-repeat transparent;
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='42' viewBox='0 0 24 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.40237 41.2538C3.1171 41.5391 2.76051 41.6817 2.36827 41.6817C1.97602 41.6817 1.61943 41.5391 1.33416 41.2538C0.763614 40.6833 0.763614 39.7561 1.33416 39.1856L19.5202 20.9996L1.33416 2.81351C0.763614 2.24296 0.763614 1.31583 1.33416 0.74529C1.9047 0.174747 2.83183 0.174747 3.40237 0.74529L22.6225 19.9654C23.1931 20.536 23.1931 21.4631 22.6225 22.0337L3.40237 41.2538Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
-    &:hover {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+    &:hover {
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='42' viewBox='0 0 24 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.40237 41.2538C3.1171 41.5391 2.76051 41.6817 2.36827 41.6817C1.97602 41.6817 1.61943 41.5391 1.33416 41.2538C0.763614 40.6833 0.763614 39.7561 1.33416 39.1856L19.5202 20.9996L1.33416 2.81351C0.763614 2.24296 0.763614 1.31583 1.33416 0.74529C1.9047 0.174747 2.83183 0.174747 3.40237 0.74529L22.6225 19.9654C23.1931 20.536 23.1931 21.4631 22.6225 22.0337L3.40237 41.2538V41.2538Z' fill='%2389C249'/%3E%3C/svg%3E%0A");
     }
 
@@ -364,15 +414,15 @@ ul.slick-dots {
     padding: 0;
     margin: 0;
 
-    > li {
+    >li {
         margin: 0 13px;
         height: 8px;
         font-size: 0;
-        
-        &:before{
+
+        &:before {
             display: none;
         }
-        
+
         &.slick-active {
             button {
                 background-color: #fff;
@@ -392,37 +442,39 @@ ul.slick-dots {
         outline: none;
     }
 }
- 
-.charter {
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: $section-margin-lg;
-    max-width: 1920px;
-
-    &.container-fluid {
-        padding: 90px 85px 100px;
-        position: relative;
-        
-        &:before {
-            content: "";
-            border-radius: 20px;
-            position: absolute;
-            left: 42px;
-            right: 42px;
-            top: 0;
-            height: 100%;
-            background-color: $bg-secondary;
+.page-home {
+    section {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $section-margin-lg;
+        max-width: 1920px;
+    
+        &.container-fluid {
+            padding: 90px 85px 100px;
+            position: relative;
+    
+            &:before {
+                content: "";
+                border-radius: 20px;
+                position: absolute;
+                left: 42px;
+                right: 42px;
+                top: 0;
+                height: 100%;
+                background-color: $bg-secondary;
+            }
         }
-    }
-
-    &:nth-child(odd) {
-        .template-title {
-            &:after {
-                background-color: $color-primary;
+    
+        &:nth-child(odd) {
+            .template-title {
+                &:after {
+                    background-color: $color-primary;
+                }
             }
         }
     }
+    
 }
 
 .template-title {
@@ -454,7 +506,7 @@ ul.slick-dots {
         background-color: $color-secondary;
     }
 
-    
+
     /*type 2*/
     &.col-lg-7 {
         margin-bottom: 35px;
@@ -479,11 +531,11 @@ ul.slick-dots {
     }
 }
 
- 
- 
+
+
 
 .input-box {
-    
+
     label {
         font-weight: 600;
         font-size: 15px;
@@ -500,7 +552,7 @@ ul.slick-dots {
         border: none;
         transition: .2s;
         width: 100%;
-        
+
         &:focus-visible {
             outline: none;
         }
@@ -520,7 +572,7 @@ ul.slick-dots {
 }
 
 
- 
+
 .advantages,
 .services {
     @include default-bg;

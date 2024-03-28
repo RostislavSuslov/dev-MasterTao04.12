@@ -12,6 +12,25 @@ $('#first-screen-slider').slick({
 });
 
 
+$('.slider-template').slick({
+  infinite: true,
+  slidesToShow: 3,
+  responsive: [{
+    breakpoint: 1400,
+    settings: {
+      slidesToShow: 2,
+    }
+}, 
+{
+  breakpoint: 1025,
+  settings: {
+    slidesToShow: 1,
+    arrows: false,
+    dots: true,
+  }
+}, 
+]
+});
 
 
 
@@ -51,10 +70,12 @@ const fileName = document.querySelector('#file-name')
 const controledField = document.querySelectorAll('[type="checkbox"]')
 const fileField = document.querySelectorAll('[type="file"]')
 const formBtns = document.querySelectorAll('form .col button')
+const body = document.querySelector('body')
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('is-active')
     headerNav.classList.toggle('show')
+    body.classList.toggle('overflow-hidden')
 })
 
 

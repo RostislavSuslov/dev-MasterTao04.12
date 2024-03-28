@@ -30,9 +30,9 @@
         font-size: 16px;
     }
 
- 
 
-    .has-bg  {
+
+    .has-bg {
         @include default-bg;
     }
 
@@ -156,11 +156,12 @@
         min-width: initial;
         padding: 52px 27px 34px;
         margin: 0 auto;
+
         .row {
             flex-direction: column;
         }
     }
-   
+
 
     .calculation-decoration,
     .template-title.col-lg-7 h2:after {
@@ -176,17 +177,19 @@
     h3 {
         font-size: 16px;
     }
- 
-    .calculation{
+
+    .calculation {
 
         /*type 2*/
         .template-title {
-            
+
             &.col-lg-7 {
                 margin-bottom: 56px;
+
                 &:after {
-                    display: inline-block ;
+                    display: inline-block;
                 }
+
                 h2 {
                     &:after {
                         display: none;
@@ -210,5 +213,52 @@
 
     .mobile-center {
         text-align: center;
+    }
+
+    .slider-template {
+        max-width: 335px;
+
+        .slick-list {
+            margin-bottom: 32px;
+        }
+
+        .slick-slide {
+            padding: 0;
+        }
+
+        .template-card {
+            padding: 0 23px 27px;
+
+            .img-box {
+                margin: 0 -23px 29px;
+
+                img {
+                    height: 213px;
+                }
+            }
+        }
+
+        .template-card-row {
+            gap: 13px;
+
+            .btn {
+                padding: 13px 5px;
+            }
+        }
+
+    }
+
+    .services {
+
+        .slider-template {
+            .template-card {
+                .img-box {
+                    img {
+                        height: 100%;
+                        object-fit: initial;
+                    }
+                } 
+            } 
+        } 
     }
 }
